@@ -14,11 +14,15 @@ api_key = os.getenv("MISTRAL_API_KEY")
 from autogen import ConversableAgent, register_function
 from tools.paper_matcher import find_matching_papers
 
+def is_terminate_message(msg):
+    content = msg.get("content") or ""
+    return "terminate" in content.lower()
+
 LLM_CONFIG = {
     "config_list": [
         {
             "model": "open-mistral-nemo",
-            "api_key": os.getenv("MISTRAL_API_KEY"),
+            "api_key": api_key,
             "api_type": "mistral",
             "api_rate_limit": 0.25,
             "repeat_penalty": 1.1,
@@ -59,13 +63,15 @@ assistant = ConversableAgent(
         "TERMINATE"
     ),
     llm_config=LLM_CONFIG,
+    is_termination_msg=is_terminate_message,
 )
 
 user_proxy = ConversableAgent(
     name="UserProxy",
     llm_config=False,
     human_input_mode="NEVER",
-    is_termination_msg=lambda msg: msg.get("content") is not None and "TERMINATE" in msg["content"],
+    is_termination_msg=is_terminate_message,
+    max_consecutive_auto_reply=1,
 )
 
 register_function(
@@ -90,4 +96,5 @@ if __name__ == "__main__":
     user_proxy.initiate_chat(
         assistant,
         message=user_prompt,
+        max_turns=3,
     )
