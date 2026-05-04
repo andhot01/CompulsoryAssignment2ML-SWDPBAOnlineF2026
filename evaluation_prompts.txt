@@ -1,0 +1,34 @@
+10 test prompts to evaluate agent
+
+1: "Find a paper about artificial intelligence agents with at least 100 citations. Explain why it is relevant."
+What the prompt tests - a broad topic with minimum citation constraint and relevance explanation.
+
+2: "Find a paper about LLM agents for software engineering published after 2021 with at least 100 citations. Explain why the paper is relevant and provide the source of the
+citation count."
+What the prompt tests - a narrow topic with an after-year constraint, a citation minimum and citation source requirement.
+
+3: "Find a paper about retrieval-augmented generation published before 2021 with more than 500 citations. Summarize its contribution in 5-7 sentences."
+What the prompt tests - before-year constraint with a citation minimum and a summary request.
+
+4: "Find a paper about tool-using AI agents published in 2023 with at least 50 citations. Explain whether it would be useful for someone building autonomous software agents."
+What the prompt tests - narrow topic with exact year constraint and explanation request.
+
+5: "Find a paper about natural language processing published in 2020 with at least 500 citations. Give a short explanation of why it matches."
+What the prompt tests - broad topic with an exact year constraint, high citation count and explanation request.
+
+6: "Find a recent paper about AI agents using tools and explain whether it would be useful for building autonomous software agents."
+What the prompt tests - ambiguos request (recent - meaning max 2-3 years ago).
+
+7: "Find a paper about retrieval-augmented generation published after 2022 with fewer than 200 citations. Explain why it matches the request."
+What the prompt tests - maximum citation constraint.
+
+8: "Find a paper about AI agents with approximately 100 citations published after 2021. Explain any uncertainty in the match."
+What the prompt tests - approximation (should be plus minus 20%)
+
+9: "Find a paper about retrieval-augmented generation published before 2008 with more than 5000 citations. Summarize its contribution."
+What the prompt tests - probabaæy no valid result, potential invented answer or hallucination.
+
+10: "Find an important paper about AI systmes and explain why it matters."
+What the prompt tests - ambiguous and subjective topic, underspecified request.
+
+Evaluation results are included in the README file.
