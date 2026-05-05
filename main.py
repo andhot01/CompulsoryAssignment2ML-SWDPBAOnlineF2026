@@ -89,8 +89,7 @@ register_function(
 
 if __name__ == "__main__":
     user_prompt = (
-        "Find a paper about retrieval-augmented generation published before 2021 "
-        "with more than 500 citations. Summarize its contribution in 5-7 sentences."
+        "Find an important paper about AI systems and explain why it matters."
     )
 
     user_proxy.initiate_chat(

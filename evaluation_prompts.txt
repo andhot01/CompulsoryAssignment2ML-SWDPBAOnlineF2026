@@ -17,7 +17,7 @@ What the prompt tests - narrow topic with exact year constraint and explanation 
 What the prompt tests - broad topic with an exact year constraint, high citation count and explanation request.
 
 6: "Find a recent paper about AI agents using tools and explain whether it would be useful for building autonomous software agents."
-What the prompt tests - ambiguos request (recent - meaning max 2-3 years ago).
+What the prompt tests - ambiguous request (recent - meaning max 2-3 years ago).
 
 7: "Find a paper about retrieval-augmented generation published after 2022 with fewer than 200 citations. Explain why it matches the request."
 What the prompt tests - maximum citation constraint.
@@ -26,9 +26,9 @@ What the prompt tests - maximum citation constraint.
 What the prompt tests - approximation (should be plus minus 20%)
 
 9: "Find a paper about retrieval-augmented generation published before 2008 with more than 5000 citations. Summarize its contribution."
-What the prompt tests - probabaæy no valid result, potential invented answer or hallucination.
+What the prompt tests - probably no valid result, potential for invented answer or hallucination.
 
-10: "Find an important paper about AI systmes and explain why it matters."
+10: "Find an important paper about AI systems and explain why it matters."
 What the prompt tests - ambiguous and subjective topic, underspecified request.
 
 Evaluation results are included in the README file.
